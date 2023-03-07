@@ -1,5 +1,6 @@
 package exam;
 
+import java.time.Year;
 import java.util.Scanner;
 
 public class Student {
@@ -119,9 +120,10 @@ public class Student {
     }
 
     public String displayData () {
+        int year = Year.now().getValue();
         return "StudentID: " + studentId + "\n"
                 + "Tên sinh viên: " + studentName + "\n"
-                + "Tuổi: " + (2023 - age) + "\n"
+                + "Năm sinh: " + (year - age) + "\n"
                 + "Giới tính: " + gender + "\n"
                 + "Điện thoại: " + phone + "\n"
                 + "Địa chỉ: " + address + "\n"

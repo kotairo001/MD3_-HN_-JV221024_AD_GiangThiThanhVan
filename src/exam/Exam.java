@@ -5,10 +5,6 @@ import java.util.Scanner;
 
 public class Exam {
     public static void main(String[] args) {
-//        Student student1 = new Student();
-//        student1.inputData();
-//        System.out.println("Student's Information: " + "\n" + student1.displayData());
-
         int size = 200;
         Student obj[] = new Student[size];
         int choice = 0;
@@ -35,7 +31,6 @@ public class Exam {
                         obj[i].inputData();
                     }
                     formInput = true;
-                    ;
                     break;
                 case 2:
                     if (formInput) {
@@ -44,9 +39,7 @@ public class Exam {
                         }
                     } else {
                         System.out.println("Không có danh sách sinh viên");
-
-                    }
-                    ;
+                    };
                     break;
                 case 3:
                     if (formInput) {
@@ -59,11 +52,10 @@ public class Exam {
                                 }
                             }
                         }
+                        System.out.println("Chọn 2 để xem danh sách sau sắp xếp");
                     } else {
                         System.out.println("Không có danh sách sinh viên");
-
                     }
-
                     break;
                 case 4:
                     if (formInput) {
@@ -72,28 +64,28 @@ public class Exam {
                         String name = input.nextLine();
                         for (int i = 0; i < size; i++) {
                             if (obj[i].getStudentName().equalsIgnoreCase(name)) {
-                                System.out.println("Sinh viên cần tìm: " + obj[i].displayData());
+                                System.out.println("Sinh viên cần tìm: " + "\n" + obj[i].displayData());
                                 break;
                             }
                         }
                     } else {
                         System.out.println("Không có danh sách sinh viên");
                     }
-
                     break;
                 case 5:
                     if (formInput) {
                         for (int i = 0; i < size; i++) {
                             if (obj[i].isGender().equalsIgnoreCase("nu")) {
                                 System.out.println("Danh sách các bạn nữ: " + "\n" + obj[i].displayData());
-                            } else {
+                            } else if(obj[i].isGender().equalsIgnoreCase("nam")) {
                                 System.out.println("Danh sách các bạn nam: " + "\n" + obj[i].displayData());
+                            } else {
+                                System.out.println("Danh sách các bạn giới tính khác: " + "\n" + obj[i].displayData());
                             }
                         }
                     } else {
                         System.out.println("Không có danh sách sinh viên");
                     }
-
                     break;
                 case 6:
                     if (formInput) {
@@ -106,15 +98,12 @@ public class Exam {
                         }
                     } else {
                         System.out.println("Không có danh sách sinh viên");
-
                     }
-
                     break;
                 case 7:
                     System.exit(0);
                     break;
             }
-
         } while (choice < 8);
     }
 }
